@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayatt - The Wellness Paradise | Inmobiliaria A.L.</title>
+    <meta name="description" content="Mayatt Eco Luxury Hotel. Inversión inmobiliaria en el Caribe colombiano. 20 cabañas frente al mar, ROI 35-39% anual. Arroyo de Piedra, Cartagena.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arena: { light: '#FAF8F5', DEFAULT: '#F5F3ED', dark: '#E8E4D8' },
+                        marino: { light: '#1E4B75', DEFAULT: '#153755', dark: '#0C2033' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; color: #153755; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .hero-image { background-image: url('GALERIA-MAYATT/MAYATT-CABANAS-FRENTE-AL-MAR.jpeg'); }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -50%;
+            top: 8px;
+            width: 100%;
+            height: 1px;
+            background: rgba(21,55,85,0.15);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ============================= NAVBAR ============================= -->
+    <nav x-data="{ open: false }" class="w-full bg-arena-light sticky top-0 z-50 border-b border-marino/8 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-4 flex justify-between items-center">
+
+            <a href="index.html" class="flex-shrink-0">
+                <img src="MARLYN POLO IMB AL LOGO horizontal.svg" alt="INMOBILIARIA A.L." class="h-6 w-auto">
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-marino">
+                <a href="#el-proyecto" class="hover:text-marino-light transition-colors duration-200">El Proyecto</a>
+                <a href="#amenidades"  class="hover:text-marino-light transition-colors duration-200">Amenidades</a>
+                <a href="#galeria"     class="hover:text-marino-light transition-colors duration-200">Galería</a>
+                <a href="#inversion"   class="hover:text-marino-light transition-colors duration-200">Inversión</a>
+                <a href="#expansion"   class="hover:text-marino-light transition-colors duration-200">Expansión</a>
+                <a href="#ubicacion"   class="hover:text-marino-light transition-colors duration-200">Ubicación</a>
+                <a href="#contacto" class="bg-marino text-arena-light px-6 py-3 rounded-2xl font-semibold hover:bg-marino-light transition-all duration-300 shadow-md ml-2">
+                    Agendar Cita
+                </a>
+            </div>
+
+            <button @click="open = !open" class="lg:hidden text-marino">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x-show="!open" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x-show="open"  d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <div x-show="open" x-transition class="lg:hidden bg-arena-light border-t border-marino/10 px-6 py-6 flex flex-col gap-5 text-marino font-semibold">
+            <a @click="open=false" href="#el-proyecto">El Proyecto</a>
+            <a @click="open=false" href="#amenidades">Amenidades</a>
+            <a @click="open=false" href="#galeria">Galería</a>
+            <a @click="open=false" href="#inversion">Inversión</a>
+            <a @click="open=false" href="#expansion">Expansión</a>
+            <a @click="open=false" href="#ubicacion">Ubicación</a>
+            <a @click="open=false" href="#contacto" class="bg-marino text-arena-light px-6 py-3 rounded-2xl text-center">Agendar Cita</a>
+        </div>
+    </nav>
+
+    <!-- ============================= HERO ============================= -->
+    <header class="hero-image w-full min-h-screen flex flex-col justify-end bg-cover bg-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-arena-light via-arena-light/60 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pb-20 pt-32 w-full">
+
+            <div class="inline-flex items-center gap-2.5 bg-marino text-arena-light px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot"></span>
+                En Preventa &middot; Lanzamiento 2026
+            </div>
+
+            <p class="text-marino/70 font-semibold tracking-[0.25em] uppercase text-sm mb-3">Eco Luxury Hotel</p>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-marino leading-tight mb-6 max-w-4xl">
+                Mayatt &mdash; The Wellness Paradise
+            </h1>
+
+            <p class="text-lg md:text-xl text-marino/80 leading-relaxed mb-10 max-w-3xl font-medium">
+                Arroyo de Piedra, Km 18, Zona Norte de Cartagena &mdash; 20 min de Cartagena, 45 min de Barranquilla.<br>
+                Un santuario donde el lujo se vive en armonía con la naturaleza.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-3xl">
+                <div class="bg-arena/90 backdrop-blur-sm p-6 rounded-2xl border border-marino/10 shadow">
+                    <p class="text-2xl font-bold text-marino">$60.000.000 <span class="text-base font-semibold">COP</span></p>
+                    <p class="text-xs text-marino/60 font-semibold uppercase tracking-wider mt-1">Por acción</p>
+                </div>
+                <div class="bg-arena/90 backdrop-blur-sm p-6 rounded-2xl border border-marino/10 shadow">
+                    <p class="text-2xl font-bold text-marino">35% &ndash; 39%</p>
+                    <p class="text-xs text-marino/60 font-semibold uppercase tracking-wider mt-1">ROI estimado anual</p>
+                </div>
+                <div class="bg-arena/90 backdrop-blur-sm p-6 rounded-2xl border border-marino/10 shadow">
+                    <p class="text-2xl font-bold text-marino">20 Cabañas</p>
+                    <p class="text-xs text-marino/60 font-semibold uppercase tracking-wider mt-1">+ Edificio central</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contacto" class="bg-marino text-arena-light px-10 py-5 rounded-2xl font-bold text-base text-center hover:bg-marino-light transition-all duration-300 shadow-xl hover:-translate-y-0.5">
+                    Agendar Cita
+                </a>
+                <a href="#" class="border-2 border-marino text-marino px-10 py-5 rounded-2xl font-bold text-base text-center hover:bg-marino hover:text-arena-light transition-all duration-300 hover:-translate-y-0.5">
+                    Descargar Brochure
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ============================= SOBRE EL PROYECTO ============================= -->
+    <section id="el-proyecto" class="w-full bg-arena-light py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+
+            <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">El Proyecto</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-marino leading-tight mb-8">
+                    Un lugar para reconectarte con lo que eres
+                </h2>
+                <p class="text-lg text-marino/80 leading-relaxed mb-12">
+                    Mayatt nace en un terreno de seis mil metros cuadrados con acceso directo a una playa privada del Caribe colombiano. Aquí, el ruido de la rutina se queda atrás y el tiempo recupera el ritmo de las olas. Veinte cabañas y un edificio central de tres niveles conviven con la selva y la arena, pensados para que el lujo se sienta, no se anuncie.
+                </p>
+
+                <div class="grid grid-cols-3 gap-6 border-t border-marino/10 pt-10">
+                    <div class="flex flex-col gap-1.5">
+                        <span class="text-3xl font-bold text-marino">6.000 m²</span>
+                        <span class="text-sm text-marino/60 font-medium leading-tight">Terreno frente al mar</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5 border-x border-marino/10 px-6">
+                        <span class="text-3xl font-bold text-marino">20</span>
+                        <span class="text-sm text-marino/60 font-medium leading-tight">Cabañas privadas</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5 pl-2">
+                        <span class="text-3xl font-bold text-marino">100%</span>
+                        <span class="text-sm text-marino/60 font-medium leading-tight">Transparencia vía App Mayatt</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                <div class="relative">
+                    <div class="bg-arena p-3 rounded-3xl shadow-2xl">
+                        <img src="GALERIA-MAYATT/MAYATT-EDIFICIO-LOBBY.jpeg" alt="Lobby Mayatt" class="w-full aspect-[4/5] object-cover rounded-2xl">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-marino text-arena-light px-6 py-4 rounded-2xl shadow-xl hidden md:flex flex-col">
+                        <span class="text-xs font-bold tracking-widest uppercase opacity-70 mb-1">Ubicación</span>
+                        <span class="font-semibold text-sm">Arroyo de Piedra, Cartagena</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================= PILARES ============================= -->
+    <section class="w-full bg-arena py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Living Wellness</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-marino">Cuatro movimientos, un mismo propósito</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+                <div class="bg-arena-light p-10 rounded-3xl shadow-sm border border-marino/5 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-marino rounded-2xl flex items-center justify-center mb-6 shadow">
+                        <svg class="w-7 h-7 text-arena-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Vivir en Armonía Total</h3>
+                    <p class="text-marino/70 leading-relaxed text-base">Naturaleza, arquitectura y bienestar en un mismo ritmo. Un entorno donde cada detalle te conecta con el entorno.</p>
+                </div>
+
+                <div class="bg-arena-light p-10 rounded-3xl shadow-sm border border-marino/5 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-marino rounded-2xl flex items-center justify-center mb-6 shadow">
+                        <svg class="w-7 h-7 text-arena-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Inversión Patrimonial Segura</h3>
+                    <p class="text-marino/70 leading-relaxed text-base">Un activo real, con respaldo en la tierra y en el modelo de negocio. Plusvalía sostenida y retorno garantizado.</p>
+                </div>
+
+                <div class="bg-arena-light p-10 rounded-3xl shadow-sm border border-marino/5 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-marino rounded-2xl flex items-center justify-center mb-6 shadow">
+                        <svg class="w-7 h-7 text-arena-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Exclusividad y Disfrute</h3>
+                    <p class="text-marino/70 leading-relaxed text-base">Espacios pensados para pocos, vividos al máximo. Acceso privilegiado como accionista con beneficios únicos.</p>
+                </div>
+
+                <div class="bg-arena-light p-10 rounded-3xl shadow-sm border border-marino/5 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-marino rounded-2xl flex items-center justify-center mb-6 shadow">
+                        <svg class="w-7 h-7 text-arena-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Conexión Profunda</h3>
+                    <p class="text-marino/70 leading-relaxed text-base">Con el lugar, con las personas, con uno mismo. Un refugio que reinventa el descanso como una experiencia transformadora.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= AMENIDADES ============================= -->
+    <section id="amenidades" class="w-full bg-arena-light py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-6">
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Lo que te espera</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-6">Todo lo que necesitas, nada que sobre</h2>
+                <p class="text-lg text-marino/70 max-w-2xl mx-auto">Un ecosistema completo de bienestar, diseñado para que cada día se viva sin prisa.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-16">
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Restaurante 24 horas</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Rooftop Bar</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">SPA</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Piscina natural · 280 m²</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Sauna</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Baño turco</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Gimnasio</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Coworking</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Sala de entretenimiento</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-6 rounded-2xl hover:-translate-y-2 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-marino/10">
+                    <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-marino text-sm leading-tight">Playa privada</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= GALERÍA ============================= -->
+    <section id="galeria" class="w-full bg-arena py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Fotografías del proyecto</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-marino">Explora</h2>
+                </div>
+                <p class="text-marino/60 max-w-xs text-sm">Imágenes reales del proyecto Mayatt, Eco Luxury Hotel.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-EDIFICIO-LOBBY.jpeg" alt="Fachada Mayatt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Fachada · Lobby</span>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-CABANA-MATRI-AFUERA.jpeg" alt="Cabaña matrimonial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Cabaña matrimonial</span>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-EDIFICIO-RESTAURANTE.jpeg" alt="Rooftop bar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Rooftop bar · Restaurante</span>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-CABANA-DUPLEX.jpeg" alt="Piscina natural" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Piscina natural · Dúplex</span>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-CABANAS-FRENTE-AL-MAR.jpeg" alt="Playa privada" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Playa privada</span>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow bg-arena-dark">
+                    <img src="GALERIA-MAYATT/MAYATT-HABITACION.jpeg" alt="Habitación interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-marino/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                        <span class="text-arena-light font-semibold">Interiores · Diseño</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= INVERSIÓN ============================= -->
+    <section id="inversion" class="w-full bg-arena-light py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Plan de inversión</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-marino">¿Cómo financias tu acción?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-14">
+
+                <div class="flex flex-col items-center text-center bg-arena p-8 rounded-3xl border border-marino/5 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-11 h-11 bg-marino text-arena-light rounded-full flex items-center justify-center font-bold text-lg mb-5 shadow-md">1</div>
+                    <span class="text-xl font-bold text-marino mb-2">$2.000.000</span>
+                    <span class="text-xs font-semibold text-marino/60 uppercase tracking-widest">Separación</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-8 rounded-3xl border border-marino/5 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-11 h-11 bg-marino text-arena-light rounded-full flex items-center justify-center font-bold text-lg mb-5 shadow-md">2</div>
+                    <span class="text-xl font-bold text-marino mb-2">30%</span>
+                    <span class="text-xs font-semibold text-marino/60 uppercase tracking-widest">Cuota inicial</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-arena p-8 rounded-3xl border border-marino/5 shadow-sm hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-11 h-11 bg-marino text-arena-light rounded-full flex items-center justify-center font-bold text-lg mb-5 shadow-md">3</div>
+                    <span class="text-xl font-bold text-marino mb-2">70%</span>
+                    <span class="text-xs font-semibold text-marino/60 uppercase tracking-widest">Financiado 12–18 m.</span>
+                </div>
+
+                <div class="flex flex-col items-center text-center bg-marino p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-11 h-11 bg-arena text-marino rounded-full flex items-center justify-center font-bold text-lg mb-5">4</div>
+                    <span class="text-xl font-bold text-arena-light mb-2">$60.000.000</span>
+                    <span class="text-xs font-semibold text-arena-light/70 uppercase tracking-widest">Valor total acción</span>
+                </div>
+
+            </div>
+
+            <div class="bg-arena border border-marino/10 rounded-3xl p-10 md:p-14 text-center shadow-sm">
+                <div class="w-14 h-14 bg-marino/8 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-marino" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <p class="text-lg md:text-xl text-marino leading-relaxed max-w-3xl mx-auto mb-8">
+                    Cada acción incluye <strong>15 noches de renta</strong> y <strong>15 noches de uso del accionista</strong> al año, con una tarifa de <strong>$600.000 COP por noche</strong>. La gestión es 100% transparente a través de la <strong>App MAYATT</strong>.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10 text-marino/60 text-xs font-bold tracking-widest uppercase">
+                    <span>Comercializa: <strong class="text-marino">Propfy</strong></span>
+                    <span class="hidden sm:block text-marino/20">&bull;</span>
+                    <span>Construye: <strong class="text-marino">Construmas</strong></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================= EXPANSIÓN ============================= -->
+    <section id="expansion" class="w-full bg-arena py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Red de santuarios</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-6">Una red de santuarios por Colombia</h2>
+                <p class="text-lg text-marino/70 max-w-2xl mx-auto">Mayatt es el inicio de una red de ecosistemas de bienestar que crecerá por las geografías más auténticas del país.</p>
+            </div>
+
+            <!-- Línea de Tiempo y Destinos -->
+            <div class="relative">
+                <!-- Línea de conexión horizontal decorativa detrás (solo visible en pantallas grandes) -->
+                <div class="hidden lg:block absolute left-10 right-10 top-[222px] h-[2px] bg-marino/10 z-0"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
+
+                    <!-- Cartagena -->
+                    <div class="flex flex-col items-center bg-arena-light p-5 rounded-3xl border border-marino/5 shadow-md hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                            <img src="DESTINOS/CARTAGENA.jpg" alt="Cartagena" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-marino flex items-center justify-center mb-4 ring-4 ring-arena">
+                            <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-marino text-center">Cartagena 2026</h3>
+                    </div>
+
+                    <!-- Barú -->
+                    <div class="flex flex-col items-center bg-arena-light p-5 rounded-3xl border border-marino/5 shadow-md hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                            <img src="DESTINOS/BARU.jpg" alt="Barú" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-marino/20 flex items-center justify-center mb-4 ring-4 ring-arena">
+                            <div class="w-1.5 h-1.5 rounded-full bg-marino/40"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-marino/70 text-center">Barú 2027</h3>
+                    </div>
+
+                    <!-- Santa Marta -->
+                    <div class="flex flex-col items-center bg-arena-light p-5 rounded-3xl border border-marino/5 shadow-md hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                            <img src="DESTINOS/STMARTA.jpg" alt="Santa Marta" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-marino/20 flex items-center justify-center mb-4 ring-4 ring-arena">
+                            <div class="w-1.5 h-1.5 rounded-full bg-marino/40"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-marino/70 text-center">Santa Marta 2029</h3>
+                    </div>
+
+                    <!-- Guatapé -->
+                    <div class="flex flex-col items-center bg-arena-light p-5 rounded-3xl border border-marino/5 shadow-md hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                            <img src="DESTINOS/GUATAPE.jpg" alt="Guatapé" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-marino/20 flex items-center justify-center mb-4 ring-4 ring-arena">
+                            <div class="w-1.5 h-1.5 rounded-full bg-marino/40"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-marino/70 text-center">Guatapé 2031</h3>
+                    </div>
+
+                    <!-- Eje Cafetero -->
+                    <div class="flex flex-col items-center bg-arena-light p-5 rounded-3xl border border-marino/5 shadow-md hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                            <img src="DESTINOS/EJE.jpg" alt="Eje Cafetero" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-marino/20 flex items-center justify-center mb-4 ring-4 ring-arena">
+                            <div class="w-1.5 h-1.5 rounded-full bg-marino/40"></div>
+                        </div>
+                        <h3 class="font-bold text-lg text-marino/70 text-center">Eje Cafetero 2033</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= UBICACIÓN ============================= -->
+    <section id="ubicacion" class="w-full bg-arena-light py-28 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+
+            <div class="w-full lg:w-1/3">
+                <div class="w-16 h-16 bg-marino rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <svg class="w-9 h-9 text-arena-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+                <span class="block text-xs font-bold tracking-widest uppercase text-marino/50 mb-4">Dónde nos encontramos</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-marino mb-6 leading-snug">
+                    Arroyo de Piedra, Km 18, Zona Norte de Cartagena
+                </h2>
+                <p class="text-marino/70 leading-relaxed mb-8">
+                    Acceso directo a playa privada, a un costo y tiempo de viaje que lo hacen igual de cercano para Cartagena y Barranquilla.
+                </p>
+                <div class="flex flex-col gap-4 text-sm font-semibold mb-10">
+                    <div class="flex items-center gap-3 text-marino">
+                        <div class="w-2 h-2 rounded-full bg-marino"></div>
+                        20 minutos desde Cartagena
+                    </div>
+                    <div class="flex items-center gap-3 text-marino">
+                        <div class="w-2 h-2 rounded-full bg-marino/50"></div>
+                        45 minutos desde Barranquilla
+                    </div>
+                </div>
+                <a href="#contacto" class="inline-block bg-marino text-arena-light px-8 py-4 rounded-2xl font-bold hover:bg-marino-light transition-all duration-300 shadow-md">
+                    Agendar visita al proyecto
+                </a>
+            </div>
+
+            <div class="w-full lg:w-2/3">
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-marino/10 bg-arena-dark">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.614660707797!2d-75.4385121!3d10.5592534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef63cd4afcbfb8b%3A0xc4f5c94488f7b767!2sArroyo%20De%20Piedra%2C%20Cartagena%20de%20Indias!5e0!3m2!1ses!2sco!4v1714000000000!5m2!1ses!2sco"
+                        width="100%"
+                        height="480"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación Mayatt - Arroyo de Piedra, Cartagena">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer id="contacto" class="w-full bg-marino py-16 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-arena-light/10 pb-12">
+            
+            <!-- Columna 1 -->
+            <div class="md:col-span-12 lg:col-span-5 flex flex-col items-start">
+                <img src="MARLYN POLO IMB AL LOGO-01.svg" alt="INMOBILIARIA A.L. Logo" class="h-24 w-auto object-contain filter brightness-0 invert mb-6">
+                <p class="text-arena-light/80 leading-relaxed pr-0 lg:pr-12 text-sm md:text-base">
+                    Acompañamos decisiones de inversión en lotes en condominio, con enfoque en legalidad, planificación y desarrollo a largo plazo en el Caribe colombiano.
+                </p>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="md:col-span-6 lg:col-span-3">
+                <h4 class="text-arena-light font-bold mb-6 tracking-wide text-lg">Enlaces rápidos</h4>
+                <ul class="space-y-4 text-arena-light/80">
+                    <li><a href="index.html#nosotros" class="hover:text-arena-light transition-colors">Nosotros</a></li>
+                    <li><a href="index.html#inversion" class="hover:text-arena-light transition-colors">Por qué invertir</a></li>
+                    <li><a href="index.html#proyectos" class="hover:text-arena-light transition-colors">Proyectos</a></li>
+                    <li><a href="#contacto" class="hover:text-arena-light transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="md:col-span-6 lg:col-span-4 space-y-6">
+                <h4 class="text-arena-light font-bold tracking-wide text-lg">Contacto Directo</h4>
+                <div class="space-y-4 text-arena-light/80 text-sm">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-arena-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+573104518301" class="text-lg font-semibold hover:text-arena-light">+57 310 4518301</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-arena-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:Inmobiliariaalsas@gmail.com" class="hover:text-arena-light font-medium break-all">Inmobiliariaalsas@gmail.com</a>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-arena-light mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="leading-relaxed">Kra 36 N. 247- 37 Conjunto Residencial Puntalta Altagracia apto 110 torre 2</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-arena-light/10 space-y-4">
+                    <h5 class="text-arena-light font-bold text-xs uppercase tracking-wider">Nuestras Redes</h5>
+                    <div class="space-y-3 text-arena-light/70 text-xs">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-arena-light/50 font-semibold">Instagram:</span>
+                            <a href="https://instagram.com/analora_agenteinmobiliario" target="_blank" class="hover:text-arena-light">@analora_agenteinmobiliario</a>
+                            <a href="https://instagram.com/Inmobiliaria.analora" target="_blank" class="hover:text-arena-light">@Inmobiliaria.analora</a>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-arena-light/50 font-semibold">Facebook:</span>
+                            <a href="#" class="hover:text-arena-light">Ana lora agente Inmobiliario</a>
+                            <a href="#" class="hover:text-arena-light">Inmobiliaria Ana Lora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-arena-light/10 text-arena-light/50 text-sm">
+            <span>&copy; 2026 INMOBILIARIA A.L. Todos los derechos reservados.</span>
+            <div class="flex flex-col items-center md:items-end gap-1">
+                <span class="text-xs font-semibold tracking-wider uppercase text-arena-light/40">Aliado</span>
+                <img src="LOGO-PFY-BLANCO.svg" alt="Propfy Logo" class="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
