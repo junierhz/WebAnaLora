@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria A.L. - Inversión Inteligente en el Caribe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arena: {
+                            light: '#FAF8F5',
+                            DEFAULT: '#F5F3ED',
+                        },
+                        marino: {
+                            DEFAULT: '#153755',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Alpine.js for interactive components -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F3ED;
+            color: #153755;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-marino selection:text-arena-light">
+
+    <!-- SECCIÓN 1: Navbar Convencional -->
+    <nav class="w-full bg-arena-light py-5 px-6 md:px-12 lg:px-24 border-b border-marino/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img src="MARLYN POLO IMB AL LOGO horizontal.svg" alt="INMOBILIARIA A.L. Logo" class="h-6 w-auto object-contain">
+            </a>
+
+            <!-- Enlaces de Navegación Desktop -->
+            <div class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide text-marino">
+                <a href="#proyectos" class="hover:opacity-70 transition-opacity">Proyectos</a>
+                <a href="#inversion" class="hover:opacity-70 transition-opacity">Por qué invertir</a>
+                <a href="#nosotros" class="hover:opacity-70 transition-opacity">Nosotros</a>
+                <a href="#faq" class="hover:opacity-70 transition-opacity">FAQ</a>
+                <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <div class="lg:hidden flex items-center">
+                <button class="text-marino focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 1: Hero -->
+    <header class="w-full min-h-[80vh] flex flex-col justify-end py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-cover bg-center" style="background-image: url('IMAGEN BANNER HERO.jpeg');">
+        <!-- Sombreado oscuro en la parte inferior para que el texto blanco destaque -->
+        <div class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-black/60 via-black/30 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto w-full flex flex-col items-center text-center relative z-10 mt-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4 max-w-4xl drop-shadow-lg">
+                Inversión Inteligente en el Caribe
+            </h1>
+            <p class="text-lg md:text-xl text-white/95 font-medium mb-8 leading-relaxed max-w-2xl drop-shadow-lg">
+                Proyectos con planeación, legalidad y plusvalía garantizada.
+            </p>
+            <a href="#proyectos" class="inline-block bg-marino text-arena-light px-8 py-4 rounded-2xl font-semibold text-base hover:bg-marino/90 transition-all duration-300 transform hover:-translate-y-1 shadow-xl">
+                Conoce nuestros proyectos
+            </a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 2: Nuestros Proyectos -->
+    <section id="proyectos" class="w-full bg-arena-light py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center md:text-left mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-4">Nuestros proyectos</h2>
+                <p class="text-lg text-marino/70">Descubre las mejores oportunidades de inversión.</p>
+            </div>
+
+            <!-- Slider Moderno Alpine.js -->
+            <div x-data="{ slide: 0, total: 3 }" class="relative group">
+                <!-- Wrapper con overflow hidden para la animación -->
+                <div class="overflow-hidden rounded-3xl shadow-xl border border-marino/10 bg-white relative">
+                    <!-- Flex container con transición horizontal -->
+                    <div class="flex transition-transform duration-700 ease-in-out w-[300%]" :style="'transform: translateX(-' + (slide * (100/total)) + '%)'">
+                        
+                        <!-- Slide 0: Mayatt -->
+                        <div class="w-1/3 flex-shrink-0 flex flex-col lg:flex-row gap-10 items-center p-8 md:p-12">
+                            <div class="w-full lg:w-3/5">
+                                <div class="aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
+                                    <img src="Mayatt portada.jpeg" alt="Proyecto Mayatt" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/5 flex flex-col items-start lg:pr-12">
+                                <span class="inline-block px-4 py-1.5 bg-marino text-arena-light text-sm font-bold tracking-widest uppercase rounded-full mb-6 shadow-sm">Disponible</span>
+                                <h3 class="text-4xl md:text-5xl font-bold text-marino mb-6">Mayatt</h3>
+                                <p class="text-marino/80 mb-10 leading-relaxed text-lg">
+                                    Descubre el inicio de nuestro selecto portafolio de inversiones. Mayatt ha sido concebido para quienes buscan un equilibrio perfecto entre diseño de vanguardia, confort natural y alta rentabilidad. Un espacio que redefine el estándar de bienestar.
+                                </p>
+                                <a href="mayatt.html" class="inline-block bg-marino text-arena-light px-8 py-4 rounded-2xl font-semibold hover:bg-marino/90 transition-all duration-300 shadow-md">
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 1: Próximamente -->
+                        <div class="w-1/3 flex-shrink-0 flex flex-col lg:flex-row gap-10 items-center p-8 md:p-12">
+                            <div class="w-full lg:w-3/5">
+                                <div class="aspect-[16/10] rounded-2xl overflow-hidden relative shadow-md">
+                                    <div class="absolute inset-0 bg-marino/10 z-10 mix-blend-multiply"></div>
+                                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Próximamente" class="w-full h-full object-cover grayscale opacity-80 relative z-0">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/5 flex flex-col items-start lg:pr-12">
+                                <span class="inline-block px-4 py-1.5 bg-marino/10 text-marino/60 text-sm font-bold tracking-widest uppercase rounded-full mb-6">Espéralo</span>
+                                <h3 class="text-4xl md:text-5xl font-bold text-marino mb-6">Próximamente</h3>
+                                <p class="text-marino/70 mb-10 leading-relaxed text-lg">
+                                    Muy pronto revelaremos nuestra siguiente etapa de desarrollo. Un concepto innovador que combinará el confort y diseño con una integración total a la naturaleza del Caribe.
+                                </p>
+                                <button disabled class="inline-block bg-marino/50 text-arena-light px-8 py-4 rounded-2xl font-semibold cursor-not-allowed">
+                                    Pronto más info
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Próximamente -->
+                        <div class="w-1/3 flex-shrink-0 flex flex-col lg:flex-row gap-10 items-center p-8 md:p-12">
+                            <div class="w-full lg:w-3/5">
+                                <div class="aspect-[16/10] rounded-2xl overflow-hidden relative shadow-md">
+                                    <div class="absolute inset-0 bg-marino/10 z-10 mix-blend-multiply"></div>
+                                    <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Próximamente" class="w-full h-full object-cover grayscale opacity-80 relative z-0">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/5 flex flex-col items-start lg:pr-12">
+                                <span class="inline-block px-4 py-1.5 bg-marino/10 text-marino/60 text-sm font-bold tracking-widest uppercase rounded-full mb-6">Espéralo</span>
+                                <h3 class="text-4xl md:text-5xl font-bold text-marino mb-6">Próximamente</h3>
+                                <p class="text-marino/70 mb-10 leading-relaxed text-lg">
+                                    Continuamos expandiendo nuestro portafolio. Lotes exclusivos con excelente ubicación y proyección de alta rentabilidad para brindar inversiones completamente seguras.
+                                </p>
+                                <button disabled class="inline-block bg-marino/50 text-arena-light px-8 py-4 rounded-2xl font-semibold cursor-not-allowed">
+                                    Pronto más info
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Botón Anterior (Izquierda) -->
+                    <button @click="slide = slide === 0 ? total - 1 : slide - 1" class="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-arena-light/90 backdrop-blur border border-marino/20 text-marino flex items-center justify-center hover:bg-marino hover:text-arena-light transition-all duration-300 shadow-xl z-20">
+                        <svg class="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    
+                    <!-- Botón Siguiente (Derecha) -->
+                    <button @click="slide = slide === total - 1 ? 0 : slide + 1" class="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-arena-light/90 backdrop-blur border border-marino/20 text-marino flex items-center justify-center hover:bg-marino hover:text-arena-light transition-all duration-300 shadow-xl z-20">
+                        <svg class="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <!-- Puntos Navegación -->
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-arena-light/60 backdrop-blur-sm px-4 py-2 rounded-full">
+                        <button @click="slide = 0" class="w-3 h-3 rounded-full transition-all duration-300 shadow-sm" :class="slide === 0 ? 'bg-marino scale-125' : 'bg-marino/30'"></button>
+                        <button @click="slide = 1" class="w-3 h-3 rounded-full transition-all duration-300 shadow-sm" :class="slide === 1 ? 'bg-marino scale-125' : 'bg-marino/30'"></button>
+                        <button @click="slide = 2" class="w-3 h-3 rounded-full transition-all duration-300 shadow-sm" :class="slide === 2 ? 'bg-marino scale-125' : 'bg-marino/30'"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: ¿Por qué invertir en Lotes? -->
+    <section id="inversion" class="w-full bg-arena py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-6">¿Por qué invertir en Lotes?</h2>
+                <p class="text-lg md:text-xl text-marino/80 leading-relaxed font-serif italic">
+                    "Invertir en un lote dentro de un condominio es una decisión distinta a comprar tierra sin planificación. Aquí hay reglas, diseño y una visión común que protege la inversión en el tiempo."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pilar 1 -->
+                <div class="bg-white p-10 rounded-2xl shadow-md border border-marino/10">
+                    <div class="w-14 h-14 bg-marino text-arena-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Planeación y orden urbano</h3>
+                    <p class="text-marino/70 leading-relaxed">
+                        Nuestros proyectos están desarrollados como condominios, con vías internas, zonas comunes y normas de construcción definidas desde el inicio. Esto evita el desorden, mantiene la armonía del proyecto y favorece la valorización.
+                    </p>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="bg-white p-10 rounded-2xl shadow-md border border-marino/10">
+                    <div class="w-14 h-14 bg-marino text-arena-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Construcción con lineamientos claros</h3>
+                    <p class="text-marino/70 leading-relaxed">
+                        Cada condominio cuenta con estilos de fachada y reglas arquitectónicas que deben respetarse al construir. Esto garantiza coherencia visual, cuida el entorno y protege el valor de cada propiedad.
+                    </p>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="bg-white p-10 rounded-2xl shadow-md border border-marino/10">
+                    <div class="w-14 h-14 bg-marino text-arena-light rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-marino mb-4">Valorización con fundamento real</h3>
+                    <p class="text-marino/70 leading-relaxed">
+                        La valorización no depende solo del mercado, sino de la ubicación, el desarrollo del proyecto y el control constructivo. Un condominio bien planificado tiende a sostener y mejorar su valor con el tiempo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: Sobre Nosotros -->
+    <section id="nosotros" class="w-full bg-arena-light py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-8">Sobre Nosotros</h2>
+                <p class="text-lg text-marino/80 leading-relaxed mb-10">
+                    Somos una empresa dedicada a acompañar decisiones de inversión en lotes en condominio, con enfoque en legalidad, planificación y desarrollo a largo plazo. Nuestro trabajo es seleccionar proyectos bien estructurados, con reglas claras y ubicación estratégica, para que invertir y construir sea un proceso seguro y con plusvalía garantizada.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-arena p-4 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-marino/10 flex items-center justify-center text-marino">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <span class="font-bold text-marino text-lg">Legalidad 100%</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-arena p-4 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-marino/10 flex items-center justify-center text-marino">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <span class="font-bold text-marino text-lg">Proyectos planificados</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-arena p-4 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full bg-marino/10 flex items-center justify-center text-marino">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <span class="font-bold text-marino text-lg">Plusvalía garantizada</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-marino/5">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sobre Nosotros" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: Preguntas Frecuentes -->
+    <section id="faq" class="w-full bg-arena py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-marino mb-6">Preguntas Frecuentes</h2>
+            </div>
+
+            <!-- Accordion Container con Alpine.js -->
+            <div class="space-y-4" x-data="{ selected: null }">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Qué diferencia hay entre comprar un lote en condominio y un lote común?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 1" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Un lote en condominio forma parte de un proyecto planificado con normas de construcción, zonas comunes, vías internas y reglas arquitectónicas definidas. Esto garantiza orden, valorización sostenida y protección de la inversión, a diferencia de un lote común sin planificación.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Puedo construir lo que quiera en mi lote?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 2" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Al ser lotes en condominio, la construcción debe seguir un manual de convivencia y diseño arquitectónico. Esto garantiza que todas las casas mantengan una estética armoniosa y estándares de calidad, protegiendo así el valor de todo el conjunto.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Cómo funciona la valorización en estos proyectos?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 3" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            La valorización es escalonada. Comienza en la etapa de preventa y da saltos significativos a medida que se desarrolla el urbanismo, se entregan las zonas comunes y la zona general se consolida comercial y residencialmente.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 4 ? selected = 4 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Qué documentos legales respaldan la compra?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 4" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Nuestros proyectos cuentan con todos los permisos: licencias de urbanismo, permisos ambientales (si aplican) y estructuración legal a través de fiducia o promesa de compraventa, culminando en la escrituración individual de cada lote.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 5 ? selected = 5 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Cuánto tiempo tengo para construir?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 5" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Generalmente, no existe una obligación de construir de manera inmediata, a menos que el reglamento interno del condominio lo estipule explícitamente. Muchos inversionistas compran los lotes únicamente para ganar plusvalía y venderlos a futuro.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 6 ? selected = 6 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Hay financiación disponible?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 6" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Sí. Ofrecemos plazos de financiación directa durante la etapa de desarrollo y urbanismo sin intereses, facilitando el pago de la cuota inicial hasta el momento de la entrega o escrituración.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 7 ? selected = 7 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Qué pasa si no construyo de inmediato?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 7 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 7" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Absolutamente nada. Tu lote sigue ganando valor comercial mes a mes gracias al desarrollo del condominio y de la zona. Mientras tanto, solo deberás cumplir con el pago de la administración (si ya fue entregado) y los impuestos correspondientes.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="bg-arena-light rounded-2xl overflow-hidden border border-marino/5 shadow-sm">
+                    <button @click="selected !== 8 ? selected = 8 : selected = null" class="w-full text-left px-8 py-6 font-bold text-lg text-marino flex justify-between items-center focus:outline-none">
+                        <span>¿Cuáles son los costos adicionales además del precio del lote?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" :class="selected === 8 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="selected === 8" x-collapse>
+                        <div class="px-8 pb-6 text-marino/70 leading-relaxed">
+                            Se deben contemplar los gastos notariales y de registro al momento de la escrituración, el impuesto predial anual una vez escriturado, y la cuota de administración del condominio para el mantenimiento de las áreas comunes.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: Contáctanos -->
+    <section id="contacto" class="w-full bg-arena-light py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Info de Contacto -->
+                <div class="w-full lg:w-5/12 flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-marino mb-6">Contáctanos</h2>
+                    <p class="text-lg text-marino/80 mb-10 leading-relaxed">
+                        Un asesor de INMOBILIARIA A.L. te orientará según tu objetivo y etapa de inversión.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-arena flex items-center justify-center rounded-2xl text-marino flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-marino/60 uppercase tracking-widest mb-1">Teléfono</h4>
+                                <p class="text-xl font-semibold text-marino">+57 310 4518301</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-arena flex items-center justify-center rounded-2xl text-marino flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-marino/60 uppercase tracking-widest mb-1">Horario</h4>
+                                <p class="text-marino font-medium">Lunes a Viernes: 9:00 AM a 7:00 PM</p>
+                                <p class="text-marino font-medium">Sábados: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="w-full lg:w-7/12">
+                    <form class="bg-arena p-8 md:p-12 rounded-2xl shadow-sm border border-marino/5 space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-marino">Nombre completo</label>
+                                <input type="text" class="w-full bg-arena-light border border-marino/10 rounded-xl px-4 py-3 text-marino focus:outline-none focus:border-marino focus:ring-1 focus:ring-marino transition-colors" placeholder="Tu nombre">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-marino">Correo electrónico</label>
+                                <input type="email" class="w-full bg-arena-light border border-marino/10 rounded-xl px-4 py-3 text-marino focus:outline-none focus:border-marino focus:ring-1 focus:ring-marino transition-colors" placeholder="tu@correo.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-marino">Teléfono</label>
+                                <input type="tel" class="w-full bg-arena-light border border-marino/10 rounded-xl px-4 py-3 text-marino focus:outline-none focus:border-marino focus:ring-1 focus:ring-marino transition-colors" placeholder="+57 300 000 0000">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-marino">Proyecto de interés</label>
+                                <select class="w-full bg-arena-light border border-marino/10 rounded-xl px-4 py-3 text-marino focus:outline-none focus:border-marino focus:ring-1 focus:ring-marino transition-colors">
+                                    <option value="" disabled selected>Selecciona un proyecto</option>
+                                    <option value="mayatt">Mayatt</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-marino">Mensaje</label>
+                            <textarea rows="4" class="w-full bg-arena-light border border-marino/10 rounded-xl px-4 py-3 text-marino focus:outline-none focus:border-marino focus:ring-1 focus:ring-marino transition-colors resize-none" placeholder="Cuéntanos sobre tu interés en invertir..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-marino text-arena-light font-bold text-lg py-4 rounded-xl hover:bg-marino/90 transition-colors shadow-lg">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: Footer -->
+    <footer class="w-full bg-marino py-16 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-arena-light/10 pb-12">
+            
+            <!-- Columna 1 -->
+            <div class="md:col-span-12 lg:col-span-5 flex flex-col items-start">
+                <img src="MARLYN POLO IMB AL LOGO-01.svg" alt="INMOBILIARIA A.L. Logo" class="h-24 w-auto object-contain filter brightness-0 invert mb-6">
+                <p class="text-arena-light/80 leading-relaxed pr-0 lg:pr-12 text-sm md:text-base">
+                    Acompañamos decisiones de inversión en lotes en condominio, con enfoque en legalidad, planificación y desarrollo a largo plazo en el Caribe colombiano.
+                </p>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="md:col-span-6 lg:col-span-3">
+                <h4 class="text-arena-light font-bold mb-6 tracking-wide text-lg">Enlaces rápidos</h4>
+                <ul class="space-y-4 text-arena-light/80">
+                    <li><a href="#nosotros" class="hover:text-arena-light transition-colors">Nosotros</a></li>
+                    <li><a href="#inversion" class="hover:text-arena-light transition-colors">Por qué invertir</a></li>
+                    <li><a href="#proyectos" class="hover:text-arena-light transition-colors">Proyectos</a></li>
+                    <li><a href="#contacto" class="hover:text-arena-light transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="md:col-span-6 lg:col-span-4 space-y-6">
+                <h4 class="text-arena-light font-bold tracking-wide text-lg">Contacto Directo</h4>
+                <div class="space-y-4 text-arena-light/80 text-sm">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-arena-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+573104518301" class="text-lg font-semibold hover:text-arena-light">+57 310 4518301</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-arena-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:Inmobiliariaalsas@gmail.com" class="hover:text-arena-light font-medium break-all">Inmobiliariaalsas@gmail.com</a>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-arena-light mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="leading-relaxed">Kra 36 N. 247- 37 Conjunto Residencial Puntalta Altagracia apto 110 torre 2</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-arena-light/10 space-y-4">
+                    <h5 class="text-arena-light font-bold text-xs uppercase tracking-wider">Nuestras Redes</h5>
+                    <div class="space-y-3 text-arena-light/70 text-xs">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-arena-light/50 font-semibold">Instagram:</span>
+                            <a href="https://instagram.com/analora_agenteinmobiliario" target="_blank" class="hover:text-arena-light">@analora_agenteinmobiliario</a>
+                            <a href="https://instagram.com/Inmobiliaria.analora" target="_blank" class="hover:text-arena-light">@Inmobiliaria.analora</a>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-arena-light/50 font-semibold">Facebook:</span>
+                            <a href="#" class="hover:text-arena-light">Ana lora agente Inmobiliario</a>
+                            <a href="#" class="hover:text-arena-light">Inmobiliaria Ana Lora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-arena-light/10 text-arena-light/50 text-sm">
+            <span>&copy; 2026 INMOBILIARIA A.L. Todos los derechos reservados.</span>
+            <div class="flex flex-col items-center md:items-end gap-1">
+                <span class="text-xs font-semibold tracking-wider uppercase text-arena-light/40">Aliado</span>
+                <img src="LOGO-PFY-BLANCO.svg" alt="Propfy Logo" class="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
